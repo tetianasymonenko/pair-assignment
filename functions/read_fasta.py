@@ -1,9 +1,10 @@
-def read_fasta(path):
+def read_fasta(path, encoding="utf-8"):
     """
     Reads a FASTA file and returns a dictionary mapping sequence names to sequences.
 
     Parameters:
         path (str): The path to the FASTA file.
+        encoding (str): The encoding of the FASTA file.
 
     Returns:
         dict: A dictionary where keys are sequence names and values are sequences as strings.
@@ -15,7 +16,7 @@ def read_fasta(path):
     name = None
 
     """Read the FASTA file line by line, extracting sequence names and sequences."""
-    with open(path) as f:
+    with open(path, encoding=encoding) as f:
         for line in f:
             line = line.strip()
             if line.startswith(">"):
@@ -40,5 +41,3 @@ def read_fasta(path):
             del sequences[name]
     
     return sequences
-
-

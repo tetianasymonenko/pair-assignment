@@ -1,7 +1,5 @@
 import pandas as pd
-from gc_content import gc_content
-from read_fasta import read_fasta
-
+from fasta_tools import gc_content
 
 def fasta_statistics(sequences):
 	"""Return sequence length, N count, and GC percentage for each sequence."""
